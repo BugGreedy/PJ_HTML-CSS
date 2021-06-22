@@ -47,5 +47,12 @@
 </br>
 
 ### 1-2_Webページを作ってみよう
-public_html/basic.html
+次のファイルを作成し、編集する。</br>
 
+```html
+<!-- public_html/basic.html -->
+<html>
+<h1>hello HTML&CSS</h1>
+</html>
+```
+これで`http://localhost:8888/PJ_HTML-CSS/public_html/basic.html/`にアクセルするする事で
