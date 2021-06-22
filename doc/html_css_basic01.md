@@ -55,4 +55,8 @@
 <h1>hello HTML&CSS</h1>
 </html>
 ```
-これで`http://localhost:8888/PJ_HTML-CSS/public_html/basic.html/`にアクセルするする事で
+これで(http://localhost:8888/PJ_HTML-CSS/public_html/basic.html)にアクセルするする事で上記の内容を表示できる。</br>
+</br>
+
+この<~>で囲った部分を**タグ**という。</br>
+タグは`<*>~</*>`というふうに2つ一組で使用される場合が多い。</br>
