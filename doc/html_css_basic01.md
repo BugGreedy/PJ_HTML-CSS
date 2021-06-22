@@ -4,6 +4,7 @@
 [1-1_Webページの仕組みを知ろう](#1-1_Webページの仕組みを知ろう)</br>
 [1-2_Webページを作ってみよう](#1-2_Webページを作ってみよう)</br>
 [1-3_テキストを表示してみよう](#1-3_テキストを表示してみよう)</br>
+[1-4_Bootstrapを使ってみよう](#1-4_Bootstrapを使ってみよう)</br>
 
 </br>
 
@@ -97,4 +98,87 @@
   `<strong>`と`</strong>`ではさまれた部分を強調する。</br>
 </br>
 
+***
+</br>
+
+### 1-4_Bootstrapを使ってみよう
+ここではWebページを作成するために、HTML5という最新の企画に基づいて、HTMLフレームワークのBootstrapを導入してみる。</br>
+まずはHTMLのタグの基本について理解する。</br>
+```html
+<!-- public_html/basic.html -->
+
+<!-- ドキュメントタイプの指定 -->
+<!DOCTYPE html>
+<!-- Webページの言語の指定 -->
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <title>Project Mole</title>
+    </head>
+    <body>
+        <h1>吾輩は猫である。</h1>
+    </body>
+</html>
+```
+</br>
+
+* **タグの属性**</br>
+  `<html lang='ja'>`や`<div class='*'>`のようにタグに対して付属するものを**タグの属性**という。</br>
+  `<html lang='ja'>`はhtmlタグのランゲージ属性にja(ジャパニーズ)を指定している。</br>
+</br>
+
+* **headタグ**</br>
+  Webページ全体の情報を指定するタグ。</br>
+  ここではmetaタグで文字コードを指定して、titleタグでWebページのタイトルを指定している。</br>
+</br>
+
+それではBootstrapを導入してみよう。
+```html
+<!-- public_html/basic.html -->
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta charset="utf-8">
+        <!-- 下記2行のmetaタグを追加 -->
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>Project Mole</title>
+        <!-- 下記を追加 -->
+        <!-- Bootstrap -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    </head>
+    <body>
+        <h1>吾輩は猫である。</h1>
+
+        <!-- 下記のscriptタグを追加 -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    </body>
+</html>
+```
+ここでページを表示してもフォントが変わるくらいでさほど見た目に変化はない。</br>
+ここでpタグで文章を追加してみる。</br>
+
+```html
+<body>
+        <h1>吾輩は猫である。</h1>
+        <p class='lead'>名前はまだない。</p>>
+```
+ここで追加したクラス属性の`lead`とは文章の内容をまとめた要約文の事。ここでは文章を強調表示してくれる。</br>
+</br>
+
+さらに文章の下にボタンを設置してみる。</br>
+
+```html
+<body>
+  <h1>吾輩は猫である。</h1>
+  <p class='lead'>名前はまだない。</p>
+  <a class='btn btn-primary' href='#'>OK</a>
+```
+これでBootstrapのCSSが反映された文章とボタンを追加できた。</br>
+</br>
+
+***
+</br>
 

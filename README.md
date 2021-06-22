@@ -6,6 +6,7 @@
 
 ### 目次
 [HTML/CSS入門編1: HTML/CSSを理解しよう (全4回)](doc/html_css_basic01.md)</br>
+[HTML/CSS入門編2: CSSの基礎を学ぼう (全6回)](doc/html_css_basic02.md)</br>
 </br>
 
 ###  その他
