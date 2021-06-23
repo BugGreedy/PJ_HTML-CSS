@@ -5,6 +5,7 @@
 [3-1_画像とリンクを載せよう](#3-1_画像とリンクを載せよう)</br>
 [3-2_リストとナビゲーションバーを追加しよう](#3-2_リストとナビゲーションバーを追加しよう)</br>
 [3-3_テーブルを表示しよう](#3-3_テーブルを表示しよう)</br>
+[3-4_基本的なフォームを作ろう](#3-4_基本的なフォームを作ろう)</br>
 
 
 
@@ -247,3 +248,49 @@ href属性の値を`#id名`とする事でリンクの指定ができる。</br>
 ***
 </br>
 
+### 3-4_基本的なフォームを作ろう
+ここでは会員登録や問い合わせに利用できるフォームを作ってみる。</br>
+まずは簡素な1行フォームを追加してみる。
+
+```html
+<!-- public_html/basic03-04.html -->
+<h2 id="form">猫フォーム</h2>
+<!-- 下記に1行フォームの内容を記載 -->
+<form action='#' method='post'>
+  <label for='title'>タイトル</label>
+  <input type='text' name='title' id='title'>
+  <button type='submit'>送信する</button>
+</form>
+```
+</br>
+
+**フォームについて**
+* formタグ：`action`で呼び出すプログラムを指定、`method`で呼び出し方式を指定。</br>
+* labelタグ：入力欄の隣に表示される見出しになる。
+* inputタグ：入力欄を指定する。`type`で入力欄のタイプを指定する。`text`でテキストボックスを表示する。</br>
+  `name`はフォームのデータを送信する時のデータの名前を指定する。</br>
+  ※labelタグの`for`とinputタグの`id`は対になるので同じ値を記述する。</br>
+* buttonタグ：送信ボタンを指定する。</br>
+</br>
+
+次にフォームにBootstrapのデザインを追加する。
+```html
+<h2 id="form">猫フォーム</h2>
+<form action='#' method='post'>
+  <!-- 下記divを追記 -->
+  <div class='form-group'>
+    <label for='title'>タイトル</label>
+    <!-- inputにclassを追記 -->
+    <input type='text' class='form-control' name='title' id='title'>
+  </div>
+  <button type='submit'>送信する</button>
+</form>
+```
+これでフォームにBootstrapのデザインを追加できた。</br>
+入力欄が画面の横いっぱいに入力欄が広がったと同時にレスポンシブデザイン対応となった。</br>
+</br>
+
+***
+</br>
+
+### 
