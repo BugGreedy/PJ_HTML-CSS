@@ -6,6 +6,7 @@
 [3-2_リストとナビゲーションバーを追加しよう](#3-2_リストとナビゲーションバーを追加しよう)</br>
 [3-3_テーブルを表示しよう](#3-3_テーブルを表示しよう)</br>
 [3-4_基本的なフォームを作ろう](#3-4_基本的なフォームを作ろう)</br>
+[3-5_フォームにパーツを追加しよう](#3-5_フォームにパーツを追加しよう)</br>
 
 
 
@@ -293,4 +294,156 @@ href属性の値を`#id名`とする事でリンクの指定ができる。</br>
 ***
 </br>
 
-### 
+### 3-5_フォームにパーツを追加しよう
+ここではフォームに複数行の入力欄や、プルダウンメニューなどのパーツを追加してみる。</br>
+</br>
+
+まずはBootstrapのない、通常のフォームのパーツを追加していく。</br>
+```html
+<!-- public_html/basic03-05.html -->
+<h2 id="form">猫フォーム</h2>
+<form action="#" method="post">
+  <div class="form-group">
+    <label for="title">タイトル</label>
+    <input type="text" class="form-control" name="title" id="title">
+  </div>
+  <!-- 下記を追記 -->
+  <label for='message'>メッセージ</label>
+  <textarea name='message' id='message' rows='3'></textarea>
+  <!-- ここまで -->
+  <button type="submit">送信する</button>
+</form>
+```
+これでとりあえずの3行の入力欄を作成できた。</br>
+
+ここにBootstrapのテーマを追加し、見ためを整える.
+```html
+<h2 id="form">猫フォーム</h2>
+<form action="#" method="post">
+  <div class="form-group">
+    <label for="title">タイトル</label>
+    <input type="text" class="form-control" name="title" id="title">
+  </div>
+  <!-- 下記を追記 -->
+  <div class='form-group'>
+  <label for='message'>メッセージ</label>
+  <!-- 下記にclass属性を追加 -->
+  <textarea class='form-control' name='message' id='message' rows='3'></textarea>
+  </div>
+  <button type="submit">送信する</button>
+</form>
+```
+これでinputタグと同様にレスポンシブのテーマが反映された。</br>
+</br>
+
+次にプルダウンリストを追加する。
+```html
+<h2 id="form">猫フォーム</h2>
+<form action="#" method="post">
+  <div class="form-group">
+    <label for="title">タイトル</label>
+    <input type="text" class="form-control" name="title" id="title">
+  </div>
+  <div class='form-group'>
+  <label for='message'>メッセージ</label>
+  <textarea class='form-control' name='message' id='message' rows='3'></textarea>
+  </div>
+  <!-- 下記を追記 -->
+  <label for='select'>好みの猫</label>
+  <select name='select' id='select'>
+    <option>タマ</option>
+    <option>ミケ</option>
+    <option>トラ</option>
+  </select>
+  <!-- ここまで -->
+  <button type="submit">送信する</button>
+</form>
+```
+これでプルダウンリストが追加できた。</br>
+次にこれまで同様にBootstrapのテーマを反映させる。</br>
+
+```html
+<h2 id="form">猫フォーム</h2>
+<form action="#" method="post">
+  <div class="form-group">
+    <label for="title">タイトル</label>
+    <input type="text" class="form-control" name="title" id="title">
+  </div>
+  <div class='form-group'>
+  <label for='message'>メッセージ</label>
+  <textarea class='form-control' name='message' id='message' rows='3'></textarea>
+  </div>
+  <!-- 下記を追記 -->
+  <div class='form-group'>
+  <label for='select'>好みの猫</label>
+  <!-- 下記にclassを追加 -->
+  <select class='form-control' name='select' id='select'>
+    <option>タマ</option>
+    <option>ミケ</option>
+    <option>トラ</option>
+  </select>
+  </div>
+  <button type="submit">送信する</button>
+</form>
+```
+これでOK。</br>
+</br>
+
+***
+</br>
+
+### 6-3_グリッドでフォームを作ろう
+ここではBootstrapのグリッドを使ってフォームのレイアウトを整理する。</br>
+構成は下記の通り。</br>
+</br>
+
+* 行(row)の項目
+1. input:name
+2. textarea:message
+3. select:select
+4. button:submit</br>
+</br>
+
+* 列(column)のWidthの比率
+  - ラベル:2
+  - 入力欄:10</br>
+</br>
+
+```html
+<!-- public_html/basic03-06.html -->
+<h2 id="form">猫フォーム</h2>
+<!-- class属性を追加 -->
+<form class='form-horizontal' action="#" method="post">
+  <div class="form-group">
+    <!-- class属性を追加 -->
+    <label class='col-sm-2 control-label' for="title">タイトル</label>
+    <!-- divタグを追加 -->
+    <div class='col-sm-10'>
+      <input type="text" class="form-control" name="title" id="title">
+    </div>
+  </div>
+  <!-- 残りの項目も同様に編集 -->
+  <div class="form-group">
+    <label class='col-sm-2 control-label' for="message">メッセージ</label>
+    <div class='col-sm-10'>
+      <textarea class="form-control" rows="3"></textarea>
+    </div>
+  </div>
+  <div class="form-group">
+    <label class='col-sm-2 control-label'for="select">好みのネコ</label>
+    <div class='col-sm-10'>
+      <select class="form-control" name="select" id="select">
+        <option>タマ</option>
+        <option>ミケ</option>
+        <option>トラ</option>
+      </select>
+    </div>
+  </div>
+  <!-- 送信ボタンにはラベルがないので下記のように記述する -->
+  <div class='form-group'>
+    <div class='col-sm-offset-2 col-sm-10'>
+      <button type="submit">OK</button>
+    </div>
+  </div>
+</form>
+```
